@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
 	FORGOT_PASSWORD_PATH,
+	GUIDE_BOOK_NEW_POST_PATH,
 	GUIDE_BOOK_PATH,
 	HELP_CENTER_PATH,
 	MY_PROFILE_PATH,
@@ -12,14 +13,18 @@ import ForgotPasswordContainer from "../Auth/Password/ForgotPasswordContainer";
 import Signin from "../Auth/Signin/Signin";
 import Signup from "../Auth/Signup/Signup";
 import NotFound from "../NotFound/NotFound";
+import GuideBookDashBoard from "../SPALayout/Body/GuideBook/Dashboard";
+import GuideBookDetail from "../SPALayout/Body/GuideBook/Detail";
+import NewGuideBookPost from "../SPALayout/Body/GuideBook/NewPost";
+import GuideBookRoute from "../SPALayout/Body/GuideBook/Route";
 import HelpCenter from "../SPALayout/Body/HelpCenter";
 import MyProfile from "../SPALayout/Body/MyProfile";
-import GuideBook from "../SPALayout/Body/ThaiHelpThai/GuideBook";
 import Home from "../SPALayout/Body/ThaiHelpThai/Home";
 import SPALayout from "../SPALayout/SPALayout";
 
 function RouteContainer() {
 	const { t } = useTranslation();
+
 	const router = createBrowserRouter([
 		{
 			path: "/",
@@ -43,16 +48,19 @@ function RouteContainer() {
 				},
 				{
 					path: GUIDE_BOOK_PATH.slice(1),
-					Component: GuideBook,
+					Component: GuideBookRoute,
 					handle: {
-						// you can put whatever you want on a route handle
-						// here we use "crumb" and return some elements,
-						// this is what we'll render in the breadcrumbs
-						// for this route
 						crumb: () => {
 							return { path: GUIDE_BOOK_PATH, title: t("thai_guide_book_msg") };
 						},
 					},
+					children: [
+						{ index: true, Component: GuideBookDashBoard },
+						{
+							path: `:id`,
+							Component: GuideBookDetail,
+						},
+					],
 				},
 			],
 			handle: {
@@ -64,6 +72,7 @@ function RouteContainer() {
 		{ path: SIGN_UP_PATH, Component: Signup },
 		{ path: SIGN_IN_PATH, Component: Signin },
 		{ path: FORGOT_PASSWORD_PATH, Component: ForgotPasswordContainer },
+		{ path: GUIDE_BOOK_NEW_POST_PATH, Component: NewGuideBookPost },
 		{ path: "*", Component: NotFound },
 	]);
 
