@@ -5,75 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4585bd59-aacb-4d20-aa0a-fa19db31cbd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.bundle/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.prettierrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/.watchmanconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/__tests__/App.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/debug.keystore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/mobile/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/java/com/mobile/MainApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/drawable/rn_edit_text_material.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/android/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/.xcode.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/Podfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile.xcodeproj/xcshareddata/xcschemes/mobile.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/AppDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/AppDelegate.mm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/Images.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobile/main.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobileTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/ios/mobileTests/mobileTests.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/metro.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/assets/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/assets/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/assets/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/assets/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/mobile-app/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/assets/splash-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/components/SplashScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

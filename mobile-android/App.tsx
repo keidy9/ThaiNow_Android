@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -24,6 +24,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import SplashScreen from './components/SplashScreen.jsx'
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -57,13 +59,25 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const [isSplash, setIsSplash] = useState(true);
+
+  useEffect(() => {
+    const splashTimer = setTimeout(() => {
+        setIsSplash(false);
+    }, 2000);
+ // Clear the timer on component unmount
+    return () => clearTimeout(splashTimer);
+  }, [])
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
   return (
+    isSplash ? <SplashScreen /> :
+
     <SafeAreaView style={backgroundStyle}>
+    <SplashScreen />
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
