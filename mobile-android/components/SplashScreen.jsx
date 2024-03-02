@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import splashLogo from '../assets/splash-logo.png'
+import { splashLogo } from '../assets';
 
 const SplashScreen = () => {
-    return (
+  return (
     <View style={styles.container}>
-       <Image style={styles.logo} source={splashLogo} resizeMode="contain"/>
+      <Image style={styles.logo} source={splashLogo} resizeMode="contain" />
     </View>
-
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -23,8 +22,7 @@ const styles = StyleSheet.create({
     height: '25%',
     aspectRatio: 1,
     alignSelf: 'center',
-  }
+  },
 });
-
 
 export default SplashScreen;
