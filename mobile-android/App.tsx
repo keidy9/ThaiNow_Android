@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -15,8 +15,11 @@ import {
   Text,
   useColorScheme,
   View,
+  Image,
 } from 'react-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   Colors,
   DebugInstructions,
@@ -25,14 +28,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import SplashScreen from './components/SplashScreen.jsx'
-import Home from './components/Home.jsx'
+import SplashScreen from './components/SplashScreen.jsx';
+import Home from './components/Home.jsx';
+import {
+  homeIcon,
+  homeIconBlue,
+  notifications,
+  notificationsBlue,
+  profile,
+  profileBlue,
+  saveList,
+  saveListBlue,
+} from './assets/navigationBar';
 
 type SectionProps = PropsWithChildren<{
-  title: string;
+  title: string,
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
+function Section({ children, title }: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -42,7 +55,8 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           {
             color: isDarkMode ? Colors.white : Colors.black,
           },
-        ]}>
+        ]}
+      >
         {title}
       </Text>
       <Text
@@ -51,7 +65,8 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           {
             color: isDarkMode ? Colors.light : Colors.dark,
           },
-        ]}>
+        ]}
+      >
         {children}
       </Text>
     </View>
@@ -61,53 +76,119 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const [isSplash, setIsSplash] = useState(true);
+  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
 
   useEffect(() => {
     const splashTimer = setTimeout(() => {
-        setIsSplash(false);
+      setIsSplash(false);
     }, 2000);
- // Clear the timer on component unmount
+    // Clear the timer on component unmount
     return () => clearTimeout(splashTimer);
-  }, [])
+  }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return (
-    isSplash ? <SplashScreen /> : <Home />
+  return isSplash ? (
+    <SplashScreen />
+  ) : (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            let icon;
 
-//     <SafeAreaView style={backgroundStyle}>
-//     <SplashScreen />
-//       <StatusBar
-//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-//         backgroundColor={backgroundStyle.backgroundColor}
-//       />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         <Header />
-//         <View
-//           style={{
-//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-//           }}>
-//           <Section title="Step One">
-//             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-//             screen and then come back to see your edits.
-//           </Section>
-//           <Section title="See Your Changes">
-//             <ReloadInstructions />
-//           </Section>
-//           <Section title="Debug">
-//             <DebugInstructions />
-//           </Section>
-//           <Section title="Learn More">
-//             Read the docs to discover what to do next:
-//           </Section>
-//           <LearnMoreLinks />
-//         </View>
-//       </ScrollView>
-//     </SafeAreaView>
+            if (route.name === 'Home') {
+              iconName = focused ? 'HomeBlue' : 'Home';
+              focused
+                ? (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={homeIconBlue}
+                    />
+                  ))
+                : (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={homeIcon}
+                    />
+                  ));
+            } else if (route.name === 'Save List') {
+              iconName = focused ? 'SaveListBlue' : 'SaveList';
+              focused
+                ? (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={saveListBlue}
+                    />
+                  ))
+                : (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={saveList}
+                    />
+                  ));
+            } else if (route.name === 'Notifications') {
+              iconName = focused ? 'NotificationsBlue' : 'NotificationsBlue';
+              focused
+                ? (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={notificationsBlue}
+                    />
+                  ))
+                : (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={notifications}
+                    />
+                  ));
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'ProfileBlue' : 'Profile';
+              focused
+                ? (icon = (
+                    <Image
+                      style={{ width: 25, height: 25 }}
+                      source={profileBlue}
+                    />
+                  ))
+                : (icon = (
+                    <Image style={{ width: 25, height: 25 }} source={profile} />
+                  ));
+            }
+
+            // You can return any component that you like here!
+            return icon;
+          },
+          tabBarActiveTintColor: '#003CA7',
+          tabBarInactiveTintColor: 'gray',
+        })}
+      >
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Save List"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Notifications"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 

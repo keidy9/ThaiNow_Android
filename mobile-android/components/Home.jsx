@@ -9,7 +9,7 @@ import {
   iconJobs,
   iconHousing,
   iconMarketplace,
-} from '../assets';
+} from '../assets/home';
 import { primary } from '../themes.js';
 
 const Home = () => {
