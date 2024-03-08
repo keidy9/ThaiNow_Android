@@ -40,6 +40,7 @@ import {
   saveList,
   saveListBlue,
 } from './assets/navigationBar';
+import HomeStack from './components/HomeStack.jsx'
 
 type SectionProps = PropsWithChildren<{
   title: string,
@@ -76,7 +77,6 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const [isSplash, setIsSplash] = useState(true);
-  const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
 
   useEffect(() => {
@@ -101,7 +101,7 @@ function App(): React.JSX.Element {
             let iconName;
             let icon;
 
-            if (route.name === 'Home') {
+            if (route.name === 'HomeStack') {
               iconName = focused ? 'HomeBlue' : 'Home';
               focused
                 ? (icon = (
@@ -168,8 +168,8 @@ function App(): React.JSX.Element {
         })}
       >
         <Tab.Screen
-          name="Home"
-          component={Home}
+          name="HomeStack"
+          component={HomeStack}
           options={{ headerShown: false }}
         />
         <Tab.Screen

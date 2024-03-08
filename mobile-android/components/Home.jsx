@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Text, ScrollView, View, StyleSheet, Image } from 'react-native';
+import {
+  Text,
+  ScrollView,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { SearchBar } from 'react-native-elements';
 import {
@@ -12,7 +19,7 @@ import {
 } from '../assets/home';
 import { primary } from '../themes.js';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [searchText, setSearchText] = useState('');
 
   const updateSearchBar = (search) => {
@@ -93,6 +100,18 @@ const Home = () => {
               justifyContent: 'center',
               alignItems: 'center',
               width: '90%',
+              backgroundColor: 'pink',
+              ...Platform.select({
+                ios: {
+                  shadowColor: '#000',
+                  shadowOffset: { width: 0, height: 2 },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 3.84,
+                },
+                android: {
+                  elevation: 15,
+                },
+              }),
             }}
           >
             <SearchBar
@@ -111,7 +130,8 @@ const Home = () => {
           fontWeight: 'bold',
           width: '100%',
           textAlign: 'center',
-          marginTop: 30,
+          marginTop: 25,
+          marginBottom: 10,
         }}
       >
         Feast Like Never Before
@@ -126,38 +146,42 @@ const Home = () => {
           height: 100,
         }}
       >
-        <View>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('ThaiHelpThaiHome');
+          }}
+        >
           <Image
             style={{ width: 60, height: 60 }}
             source={iconThaiHelp}
             resizeMode="cover"
           />
           <Text style={{ textAlign: 'center' }}>Thai Help</Text>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <Image
             style={{ width: 60, height: 60 }}
             source={iconJobs}
             resizeMode="cover"
           />
           <Text style={{ textAlign: 'center' }}>Jobs</Text>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <Image
             style={{ width: 60, height: 60 }}
             source={iconHousing}
             resizeMode="cover"
           />
           <Text style={{ textAlign: 'center' }}>Housing</Text>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <Image
             style={{ width: 60, height: 60 }}
             source={iconMarketplace}
             resizeMode="cover"
           />
           <Text style={{ textAlign: 'center' }}>Marketplace</Text>
-        </View>
+        </TouchableOpacity>
       </View>
 
       <View style={{ height: 1000, backgroundColor: 'yellow' }}></View>
