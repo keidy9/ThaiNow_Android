@@ -27,7 +27,7 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <ScrollView style={{ width: '100%' }}>
+    <ScrollView style={{ width: '100%', backgroundColor: 'white' }}>
       <View>
         <View
           style={{

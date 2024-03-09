@@ -172,16 +172,16 @@ function App(): React.JSX.Element {
           component={HomeStack}
           options={{ headerShown: false }}
         />
-        <Tab.Screen
-          name="Save List"
-          component={SplashScreen}
-          options={{ headerShown: false }}
-        />
-        <Tab.Screen
-          name="Notifications"
-          component={SplashScreen}
-          options={{ headerShown: false }}
-        />
+{/*         <Tab.Screen */}
+{/*           name="Save List" */}
+{/*           component={SplashScreen} */}
+{/*           options={{ headerShown: false }} */}
+{/*         /> */}
+{/*         <Tab.Screen */}
+{/*           name="Notifications" */}
+{/*           component={SplashScreen} */}
+{/*           options={{ headerShown: false }} */}
+{/*         /> */}
         <Tab.Screen
           name="Profile"
           component={SplashScreen}
