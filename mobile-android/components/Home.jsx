@@ -184,7 +184,7 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={{ height: 1000, backgroundColor: 'yellow' }}></View>
+      <View style={{ height: 1000, }}></View>
     </ScrollView>
   );
 };
