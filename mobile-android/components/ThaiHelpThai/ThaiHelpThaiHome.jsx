@@ -12,7 +12,7 @@ import { primary } from '../../themes.js';
 import ThaiHelpThaiHomeBackground from '../../assets/ThaiHelpThai/ThaiHelpThaiHomeBackground.png';
 import backArrowWhite from '../../assets/backArrowWhite.png';
 import backArrowBlack from '../../assets/backArrowBlack.png';
-import categories from '../../postCategories.js'
+import categories from '../../postCategories.js';
 
 const ThaiHelpThaiHome = ({ navigation }) => {
   const [guidebookPosts, setGuidebookPosts] = useState(null);
@@ -30,12 +30,8 @@ const ThaiHelpThaiHome = ({ navigation }) => {
 
   const Item = ({ item }) => {
     return (
-      <View
-        style={{ width: 300, height: 250, margin: 20 }}
-      >
-        <TouchableOpacity
-          style={{ width: '100%', height: '100%'}}
-        >
+      <View style={{ width: 300, height: 250, margin: 20 }}>
+        <TouchableOpacity style={{ width: '100%', height: '100%' }}>
           <Image
             style={{ flex: 1, width: null, height: null }}
             source={{ uri: item.details.bannerUrl }}
@@ -43,7 +39,9 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           />
           <View style={{ paddingVertical: 20 }}>
             <Text>{categories[item.details.category]}</Text>
-            <Text style={{fontSize: 20 ,fontWeight: 'bold'}}>{item.details.title}</Text>
+            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+              {item.details.title}
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -83,7 +81,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={{backgroundColor: 'white'}}>
+      <View style={{ backgroundColor: 'white' }}>
         <View
           style={{
             flex: 1,
@@ -96,7 +94,11 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           <Text style={{ color: primary, fontSize: 25, fontWeight: 'bold' }}>
             Thai Guide Book
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+            navigation.navigate('ThaiGuideBook');
+            }}
+          >
             <Image
               style={{ width: 35, height: 35 }}
               source={backArrowBlack}
