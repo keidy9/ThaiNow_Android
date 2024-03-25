@@ -112,7 +112,8 @@ const Item = ({ item }) => (
     <View
       style={{
         padding: 15,
-        border: '1px solid white',
+        borderColor: 'white',
+        borderWidth: 1,
         borderRadius: 8,
         width: 160,
         height: 120,
@@ -144,7 +145,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
   const popAction = StackActions.pop(1);
 
   return (
-    <ScrollView style={{ width: '100%', backgroundColor: 'white' }}>
+    <ScrollView style={{ width: '100%', backgroundColor: 'none' }}>
       <View>
         <View
           style={{
@@ -223,6 +224,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           renderItem={({ item }) => <Item item={item} />}
           keyExtractor={(item) => item.key}
           horizontal={true}
+          style={{ marginBottom: 10, paddingBottom: 15 }}
         ></FlatList>
       </View>
     </ScrollView>
