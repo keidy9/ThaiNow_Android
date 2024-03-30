@@ -96,7 +96,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           </Text>
           <TouchableOpacity
             onPress={() => {
-            navigation.navigate('ThaiGuideBook');
+            navigation.navigate('ThaiGuideBook', {guidebookPosts});
             }}
           >
             <Image

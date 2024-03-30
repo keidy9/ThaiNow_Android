@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react'
 import {
   Text,
   ScrollView,
@@ -141,7 +142,33 @@ const Item = ({ item }) => (
   </TouchableOpacity>
 );
 
-const ThaiHelpThaiHome = ({ navigation }) => {
+const ThaiHelpThaiHome = ({ navigation, route }) => {
+    const [guidebookPosts, setGuidebookPosts] = useState(null);
+
+  useEffect(() => {
+    setGuidebookPosts(route.params.guidebookPosts)
+  }, [route.params.guidebookPosts])
+
+  const GuidebookItem = ({ item }) => {
+    return (
+      <View style={{ width: 300, height: 250, margin: 20 }}>
+        <TouchableOpacity style={{ width: '100%', height: '100%' }}>
+          <Image
+            style={{ flex: 1, width: null, height: null }}
+            source={{ uri: item.details.bannerUrl }}
+            resizeMode="cover"
+          />
+          <View style={{ paddingVertical: 20 }}>
+            <Text>{categories[item.details.category]}</Text>
+            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+              {item.details.title}
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   const popAction = StackActions.pop(1);
 
   return (
@@ -226,6 +253,40 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           horizontal={true}
           style={{ marginBottom: 10, paddingBottom: 15 }}
         ></FlatList>
+      </View>
+
+      <View style={{ backgroundColor: 'white' }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: 20,
+            paddingBottom: 10,
+          }}
+        >
+          <Text style={{ color: primary, fontSize: 25, fontWeight: 'bold' }}>
+            Thai Guide Book
+          </Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('ThaiGuideBook', {guidebookPosts});
+            }}
+          >
+            <Image
+              style={{ width: 35, height: 35 }}
+              source={backArrowBlack}
+              resizeMode="cover"
+            />
+          </TouchableOpacity>
+        </View>
+
+        <FlatList
+          data={guidebookPosts}
+          renderItem={({ item }) => <GuidebookItem item={item} />}
+          keyExtractor={(item) => item.id}
+          horizontal={true}
+        />
       </View>
     </ScrollView>
   );
