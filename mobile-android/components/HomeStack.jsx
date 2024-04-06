@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Home.jsx';
 import ThaiHelpThaiHome from './ThaiHelpThai/ThaiHelpThaiHome.jsx';
-import ThaiGuideBook from './ThaiHelpThai/ThaiGuideBook.jsx'
+import ThaiGuideBook from './ThaiHelpThai/ThaiGuideBook.jsx';
+import ThaiGuideBookPost from './ThaiHelpThai/ThaiGuideBookPost.jsx'
 
 const HomeStack = () => {
   const Stack = createNativeStackNavigator();
@@ -21,6 +22,11 @@ const HomeStack = () => {
       <Stack.Screen
         name="ThaiGuideBook"
         component={ThaiGuideBook}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ThaiGuideBookPost"
+        component={ThaiGuideBookPost}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

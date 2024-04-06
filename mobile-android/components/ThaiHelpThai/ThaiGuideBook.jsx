@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import {
   Text,
   ScrollView,
@@ -32,7 +32,6 @@ const categories = [
     icon: basicLivingIcon,
     background: '#F9F2E7',
     color: '#C89340',
-    onPress: '',
   },
   {
     key: 'MOVING_TO_US',
@@ -40,7 +39,6 @@ const categories = [
     icon: movingToUSIcon,
     background: '#FCEBE6',
     color: '#D15733',
-    onPress: '',
   },
   {
     key: 'LIVING_PERMANENTLY',
@@ -48,7 +46,6 @@ const categories = [
     icon: livingPermanentlyIcon,
     background: '#EDF5E6',
     color: '#89C157',
-    onPress: '',
   },
   {
     key: 'TRAVEL',
@@ -56,7 +53,6 @@ const categories = [
     icon: travelIcon,
     background: '#E8F7F7',
     color: '#29A0A8',
-    onPress: '',
   },
   {
     key: 'LEARNING',
@@ -64,7 +60,6 @@ const categories = [
     icon: learningIcon,
     background: '#FAF0F8',
     color: '#B072AA',
-    onPress: '',
   },
   {
     key: 'TRANSFER',
@@ -72,7 +67,6 @@ const categories = [
     icon: transferIcon,
     background: '#F7F4DF',
     color: '#8B8450',
-    onPress: '',
   },
   {
     key: 'HEALTH',
@@ -80,7 +74,6 @@ const categories = [
     icon: healthIcon,
     background: '#E9F6EF',
     color: '#3D9C7F',
-    onPress: '',
   },
   {
     key: 'KIDS',
@@ -88,7 +81,6 @@ const categories = [
     icon: kidsIcon,
     background: '#FDEEF5',
     color: '#DC5A9A',
-    onPress: '',
   },
   {
     key: 'BUSINESS_AND_INVESTMENT',
@@ -96,7 +88,6 @@ const categories = [
     icon: businessAndInvestmentIcon,
     background: '#E6FBFE',
     color: '#35B7C7',
-    onPress: '',
   },
   {
     key: 'THAI_PRIDE',
@@ -104,50 +95,56 @@ const categories = [
     icon: thaiPrideIcon,
     background: '#ECEFFA',
     color: '#2C69B9',
-    onPress: '',
   },
 ];
 
-const Item = ({ item }) => (
-  <TouchableOpacity onPress={item.onPress}>
-    <View
-      style={{
-        padding: 15,
-        borderColor: 'white',
-        borderWidth: 1,
-        borderRadius: 8,
-        width: 160,
-        height: 120,
-        backgroundColor: item.background,
-        margin: 10,
-        elevation: 5,
-      }}
-    >
-      <Image
-        source={item.icon}
-        style={{ width: 35, height: 35, marginLeft: 5 }}
-      />
-      <Text
-        style={{
-          fontSize: 18,
-          fontWeight: 500,
-          marginTop: 10,
-          marginBottom: 20,
-          color: item.color,
-        }}
-      >
-        {item.name}
-      </Text>
-    </View>
-  </TouchableOpacity>
-);
-
 const ThaiHelpThaiHome = ({ navigation, route }) => {
-    const [guidebookPosts, setGuidebookPosts] = useState(null);
+  const [guidebookPosts, setGuidebookPosts] = useState(null);
 
   useEffect(() => {
-    setGuidebookPosts(route.params.guidebookPosts)
-  }, [route.params.guidebookPosts])
+    setGuidebookPosts(route.params.guidebookPosts);
+  }, [route.params.guidebookPosts]);
+
+  const Item = ({ item }) => (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('ThaiGuideBookPost', {
+          key: item.key,
+          name: item.name,
+        });
+      }}
+    >
+      <View
+        style={{
+          padding: 15,
+          borderColor: 'white',
+          borderWidth: 1,
+          borderRadius: 8,
+          width: 160,
+          height: 120,
+          backgroundColor: item.background,
+          margin: 10,
+          elevation: 5,
+        }}
+      >
+        <Image
+          source={item.icon}
+          style={{ width: 35, height: 35, marginLeft: 5 }}
+        />
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: 500,
+            marginTop: 10,
+            marginBottom: 20,
+            color: item.color,
+          }}
+        >
+          {item.name}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
 
   const GuidebookItem = ({ item }) => {
     return (
@@ -270,7 +267,7 @@ const ThaiHelpThaiHome = ({ navigation, route }) => {
           </Text>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('ThaiGuideBook', {guidebookPosts});
+              navigation.navigate('ThaiGuideBook', { guidebookPosts });
             }}
           >
             <Image
