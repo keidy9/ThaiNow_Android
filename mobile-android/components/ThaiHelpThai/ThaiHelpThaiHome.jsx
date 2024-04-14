@@ -11,7 +11,7 @@ import { StackActions } from '@react-navigation/native';
 import { primary } from '../../themes.js';
 import ThaiHelpThaiHomeBackground from '../../assets/ThaiHelpThai/ThaiHelpThaiHomeBackground.png';
 import backArrowWhite from '../../assets/backArrowWhite.png';
-import backArrowBlack from '../../assets/backArrowBlack.png';
+import forwardArrowBlack from '../../assets/forwardArrowBlack.png';
 import categories from '../../postCategories.js';
 
 const ThaiHelpThaiHome = ({ navigation }) => {
@@ -68,7 +68,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           />
         </View>
         <TouchableOpacity
-          style={{ marginTop: 55, marginLeft: 15, marginBottom: 200 }}
+          style={{ marginTop: 25, marginLeft: 15, marginBottom: 200 }}
           onPress={() => {
             navigation.dispatch(popAction);
           }}
@@ -101,7 +101,7 @@ const ThaiHelpThaiHome = ({ navigation }) => {
           >
             <Image
               style={{ width: 35, height: 35 }}
-              source={backArrowBlack}
+              source={forwardArrowBlack}
               resizeMode="cover"
             />
           </TouchableOpacity>

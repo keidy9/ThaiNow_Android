@@ -11,7 +11,7 @@ import { StackActions } from '@react-navigation/native';
 import { primary, headerBlue } from '../../themes.js';
 import searchBackground from '../../assets/home/searchBackground.png';
 import backArrowWhite from '../../assets/backArrowWhite.png';
-import backArrowBlack from '../../assets/backArrowBlack.png';
+import forwardArrowBlack from '../../assets/forwardArrowBlack.png';
 import {
   basicLivingIcon,
   movingToUSIcon,
@@ -108,7 +108,7 @@ const ThaiHelpThaiHome = ({ navigation, route }) => {
   const Item = ({ item }) => (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('ThaiGuideBookPost', {
+        navigation.navigate('ThaiGuideBookPostCategory', {
           key: item.key,
           name: item.name,
         });
@@ -194,10 +194,10 @@ const ThaiHelpThaiHome = ({ navigation, route }) => {
             justifyContent: 'center',
             alignItems: 'flex-start',
             width: '100%',
-            paddingTop: 50,
+            paddingTop: 25,
             paddingLeft: 15,
             paddingRight: 15,
-            paddingBottom: 25,
+            paddingBottom: 50,
           }}
         >
           <TouchableOpacity
@@ -249,7 +249,7 @@ const ThaiHelpThaiHome = ({ navigation, route }) => {
           keyExtractor={(item) => item.key}
           horizontal={true}
           style={{ marginBottom: 10, paddingBottom: 15 }}
-        ></FlatList>
+        />
       </View>
 
       <View style={{ backgroundColor: 'white' }}>
@@ -272,7 +272,7 @@ const ThaiHelpThaiHome = ({ navigation, route }) => {
           >
             <Image
               style={{ width: 35, height: 35 }}
-              source={backArrowBlack}
+              source={forwardArrowBlack}
               resizeMode="cover"
             />
           </TouchableOpacity>
